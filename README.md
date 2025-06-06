@@ -2327,9 +2327,9 @@ How to Avoid:
 Category: Networking
 Environment: K8s v1.18, on-premise
 Scenario Summary: A service was not accessible due to a misconfigured namespace selector in the service definition.
-What Happened: The service had a namespaceSelector field configured incorrectly, which caused it to be inaccessible from the intended namespace.
+What Happened: The service had a namespace Selector field configured incorrectly, which caused it to be inaccessible from the intended namespace.
 Diagnosis Steps:
-	• Inspected the service definition and found that the namespaceSelector was set to an incorrect value.
+	• Inspected the service definition and found that the namespace Selector was set to an incorrect value.
 	• Verified the intended namespace and adjusted the selector.
 Root Cause: Incorrect namespace selector configuration in the service.
 Fix/Workaround:
