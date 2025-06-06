@@ -1768,7 +1768,7 @@ What Happened: A newly applied NetworkPolicy was too restrictive, preventing com
 Diagnosis Steps:
 	• Used kubectl get networkpolicies to inspect the NetworkPolicy.
 	• Identified that the ingress rules were overly restrictive and did not allow traffic between pods that needed to communicate.
-Root Cause: The NetworkPolicy did not account for the required communication between pods.
+Root Cause: The NetworkPolicy did not account for the required communication between pods.   
 Fix/Workaround:
 	• Updated the NetworkPolicy to allow the necessary ingress traffic between the affected pods.
 	• Re-applied the NetworkPolicy and tested communication.
@@ -2242,7 +2242,7 @@ How to Avoid:
 Category: Cluster Management
 Environment: K8s v1.17, Azure AKS
 Scenario Summary: The cluster upgrade failed because certain deprecated API versions were still in use, causing compatibility issues with the new K8s version.
-What Happened: The upgrade to K8s v1.18 was blocked due to deprecated API versions still being used in certain resources, such as extensions/v1beta1 for Ingress and ReplicaSets.
+What Happened: The upgrade to K8s v1.18 was blocked due to deprecated API versions still being used in certain resources, such as extensions/v1 beta1 for Ingress and ReplicaSets.
 Diagnosis Steps:
 	• Checked the upgrade logs and identified that the upgrade failed due to the use of deprecated API versions.
 	• Inspected Kubernetes manifests for resources still using deprecated APIs and discovered several resources in the cluster using old API versions.
