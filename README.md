@@ -2784,24 +2784,6 @@ How to Avoid:
 	• Set up traffic rate limiting to prevent sudden spikes from overwhelming the network.
 	• Use resource limits and horizontal pod autoscaling for critical CNI components.
 
-
-📘 Scenario #161: Network Performance Degradation Due to Overloaded CNI Plugin
-Category: Networking
-Environment: K8s v1.21, AWS EKS
-Scenario Summary: Network performance degraded due to the CNI plugin being overwhelmed by high traffic volume.
-What Happened: A sudden spike in traffic caused the CNI plugin to become overloaded, resulting in significant packet loss and network latency between pods.
-Diagnosis Steps:
-	• Monitored network traffic using kubectl top pods and observed unusually high traffic to and from a few specific pods.
-	• Inspected CNI plugin logs and found errors related to resource exhaustion.
-Root Cause: The CNI plugin lacked sufficient resources to handle the spike in traffic, leading to packet loss and network degradation.
-Fix/Workaround:
-	• Increased resource limits for the CNI plugin pods.
-	• Used network policies to limit the traffic spikes to specific services.
-Lessons Learned: Ensure that the CNI plugin is properly sized to handle peak traffic loads, and monitor its health regularly.
-How to Avoid:
-	• Set up traffic rate limiting to prevent sudden spikes from overwhelming the network.
-	• Use resource limits and horizontal pod autoscaling for critical CNI components.
-
 📘 Scenario #162: DNS Resolution Failures Due to Misconfigured CoreDNS
 Category: Networking
 Environment: K8s v1.19, Google GKE
